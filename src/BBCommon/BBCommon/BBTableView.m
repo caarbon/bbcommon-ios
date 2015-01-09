@@ -4,6 +4,7 @@
 //
 #import "BBTableView.h"
 #import "UIView+BBCommon.h"
+#import "BBMacros.h"
 
 @interface BBTableView ()
 @property(nonatomic, strong) UIView *bottomFillView;

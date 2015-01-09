@@ -4,6 +4,7 @@
 //
 #import <UIKit/UIKit.h>
 #import "BBTextView.h"
+#import "BBMacros.h"
 
 @interface BBTextView ()
 @property(nonatomic, strong) UILabel *placeholderLabel;

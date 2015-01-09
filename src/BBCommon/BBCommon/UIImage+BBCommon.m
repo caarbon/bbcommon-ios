@@ -9,6 +9,7 @@
 
 
 #import "UIImage+BBCommon.h"
+#import "BBMacros.h"
 
 
 @implementation UIImage (BBCommon)

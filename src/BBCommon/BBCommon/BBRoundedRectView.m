@@ -3,6 +3,7 @@
 //  Copyright 2011 BigBig Bomb, LLC. All rights reserved.
 //
 #import "BBRoundedRectView.h"
+#import "BBMacros.h"
 
 
 @implementation BBRoundedRectView

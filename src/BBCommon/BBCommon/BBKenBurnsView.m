@@ -11,6 +11,7 @@
 #import "BBKenBurnsView.h"
 #import "UIView+BBCommon.h"
 #import "UIImage+BBCommon.h"
+#import "BBMacros.h"
 
 
 @interface BBKenBurnsView ()

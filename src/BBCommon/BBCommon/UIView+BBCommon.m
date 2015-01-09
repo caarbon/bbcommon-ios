@@ -5,6 +5,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+BBCommon.h"
 #import "UIImage+BBCommon.h"
+#import "BBMacros.h"
 
 @implementation UIView(BBCommon)
 

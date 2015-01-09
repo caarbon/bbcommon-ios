@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 #import "BB3DTransition.h"
 #import "UIView+BBCommon.h"
+#import "BBMacros.h"
 
 static float BB3DTopLeftRadianValues[] = {RADIANS(0), RADIANS(20), RADIANS(-90), RADIANS(90), RADIANS(-15), RADIANS(0)};
 static float BB3DBottomRightRadianValues[] ={RADIANS(0), RADIANS(-20), RADIANS(90), RADIANS(-90), RADIANS(15), RADIANS(0)};

@@ -3,6 +3,7 @@
 //  Copyright 2011 BigBig Bomb, LLC. All rights reserved.
 //
 #import "BBStackView.h"
+#import "BBMacros.h"
 
 @interface BBStackView (Private)
 
