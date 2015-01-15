@@ -60,4 +60,7 @@
 */
 - (NSString *)convertFromBase16StringToBase32String;
 
+- (NSArray *)numbersSeparatedByString:(NSString *)separator;
+
+- (CGPoint)pointWithError:(NSError **)errorPtr;
 @end

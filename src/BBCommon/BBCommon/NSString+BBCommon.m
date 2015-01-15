@@ -112,9 +112,43 @@ unsigned char strToChar (char a, char b)
     return result;
 }
 
-- (NSString *)convertFromBase16StringToBase32String {
+- (NSString *)convertFromBase16StringToBase32String
+{
     NSData *data = [self decodeFromHexidecimal];
     return [MF_Base32Codec base32StringFromData:data];
+}
+
+- (NSArray *)numbersSeparatedByString:(NSString *)separator
+{
+    NSArray *strings = [self componentsSeparatedByString:separator];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    for (NSString *str in strings) {
+        [result addObject:[formatter numberFromString:str]];
+    }
+    return [result copy];
+}
+
+- (CGPoint)pointWithError:(NSError **)errorPtr
+{
+    CGPoint result;
+
+    @try {
+        NSArray *numbers = [self numbersSeparatedByString:@","];
+        result = (CGPoint){[numbers[0] floatValue],[numbers[1] floatValue]};
+    }
+    @catch (NSException *e) {
+        NSDictionary *userInfo = @{
+       		NSLocalizedDescriptionKey: e.description,
+       		NSLocalizedFailureReasonErrorKey: e.reason,
+       	};
+        *errorPtr = [NSError errorWithDomain:@"sccommon-ios"
+                                        code:1
+                                    userInfo:userInfo];
+        result = CGPointZero;
+    }
+    return result;
 }
 
 @end
