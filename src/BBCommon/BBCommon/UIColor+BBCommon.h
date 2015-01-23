@@ -9,6 +9,8 @@
 
 + (UIColor *)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue A:(CGFloat)alpha;
 
++ (UIColor *)colorWithInteger:(NSInteger)value alpha:(CGFloat)alpha;
+
 - (UIColor *)colorByChangingAlphaTo:(CGFloat)newAlpha;
 
 @end

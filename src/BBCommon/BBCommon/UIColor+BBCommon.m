@@ -11,6 +11,15 @@
     return [UIColor colorWithRed:(red/255.0) green:(green/255.0) blue:(blue/255.0) alpha:alpha];
 }
 
++ (UIColor *)colorWithInteger:(NSInteger)value alpha:(CGFloat)alpha
+{
+	CGFloat red = ((value >> 16) & 0xFF) / 255.0F;
+	CGFloat green = ((value >> 8) & 0xFF) / 255.0F;
+	CGFloat blue = ((value) & 0xFF) / 255.0F;
+
+	return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
 - (UIColor *)colorByChangingAlphaTo:(CGFloat)newAlpha; {
 	// oldComponents is the array INSIDE the original color
 	// changing these changes the original, so we copy it
