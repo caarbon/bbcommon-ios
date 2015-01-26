@@ -11,22 +11,28 @@ static char *bbButtonStyleKey = "bbButtonStyle";
 
 // swizzled methods
 -(void)setHighlighted2:(BOOL)highlight {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "InfiniteRecursion"
     [self setHighlighted2:highlight];
+#pragma clang diagnostic pop
     BBButtonStyle *style = objc_getAssociatedObject(self, &bbButtonStyleKey);
-    [style updateAppearance:self];
-}
+    [style performSelector:@selector(updateAppearance:) withObject:self];}
 
 -(void)setSelected2:(BOOL)selected {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "InfiniteRecursion"
     [self setSelected2:selected];
+#pragma clang diagnostic pop
     BBButtonStyle *style = objc_getAssociatedObject(self, &bbButtonStyleKey);
-    [style updateAppearance:self];
-}
+    [style performSelector:@selector(updateAppearance:) withObject:self];}
 
 -(void)setEnabled2:(BOOL)enabled {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "InfiniteRecursion"
     [self setEnabled2:enabled];
+#pragma clang diagnostic pop
     BBButtonStyle *style = objc_getAssociatedObject(self, &bbButtonStyleKey);
-    [style updateAppearance:self];
-}
+    [style performSelector:@selector(updateAppearance:) withObject:self];}
 
 @end
 
