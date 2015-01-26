@@ -27,7 +27,7 @@ typedef void (^BBButtonCustomizer)(UIButton *button, BBButtonStyle *currentStyle
 - (UIImage *)imageForState:(NSUInteger)state;
 - (void)setImage:(UIImage *)image forState:(NSUInteger)state;
 
-- (void)updateAppearance:(UIButton *)button;
+- (void)applyStyleToButton:(UIButton *)button;
 
 - (UIButton *)buttonWithTitle:(NSString *)title frame:(CGRect)frame;
 

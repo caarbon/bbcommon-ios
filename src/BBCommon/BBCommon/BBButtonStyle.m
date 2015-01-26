@@ -78,11 +78,8 @@ static char *bbButtonStyleKey = "bbButtonStyle";
     if (self.buttonCustomizer) self.buttonCustomizer(button, self);
 }
 
-- (UIButton *)buttonWithTitle:(NSString *)title frame:(CGRect)frame {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = frame;    
-    [button setTitle:title forState:UIControlStateNormal];
-    
+- (void)applyStyleToButton:(UIButton *)button
+{
     for (NSNumber *controlState in self.labelStyleForState) {
         BBLabelStyle *style = [self.labelStyleForState objectForKey:controlState];
         [button setTitleColor:style.color forState:[controlState unsignedIntegerValue]];
@@ -92,15 +89,24 @@ static char *bbButtonStyleKey = "bbButtonStyle";
     for (NSNumber *controlState in self.backgroundImageForState) {
         [button setBackgroundImage:[self.backgroundImageForState objectForKey:controlState] forState:[controlState unsignedIntegerValue]];
     }
-        
+
     for (NSNumber *controlState in self.imageForState) {
         [button setImage:[self.imageForState objectForKey:controlState] forState:[controlState unsignedIntegerValue]];
     }
-    
+
     if (self.buttonCustomizer) self.buttonCustomizer(button, self);
 
     objc_setAssociatedObject(button, &bbButtonStyleKey, self, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self updateAppearance:button];
+}
+
+
+- (UIButton *)buttonWithTitle:(NSString *)title frame:(CGRect)frame {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = frame;    
+    [button setTitle:title forState:UIControlStateNormal];
+    
+    [self applyStyleToButton:button];
     return button;
 }
 
