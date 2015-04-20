@@ -49,7 +49,7 @@
 }
 
 + (UILabel *)labelWithText:(NSString *)text font:(UIFont *)font {
-    return [self labelWithText:text font:font frame:BBEmptyRect(0, 0) lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+    return [self labelWithText:text font:font frame:BBEmptyRect(0, 0) lineBreakMode:NSLineBreakByTruncatingTail alignment:UITextAlignmentLeft];
 }
 
 - (CGFloat)getFrameHeightWithMaxWidth:(CGFloat)maxWidth {
@@ -177,7 +177,7 @@
 }
 
 + (BBLabel *)labelWithText:(NSString *)text font:(UIFont *)font {
-    return [self labelWithText:text font:font frame:BBEmptyRect(0, 0) lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+    return [self labelWithText:text font:font frame:BBEmptyRect(0, 0) lineBreakMode:NSLineBreakByTruncatingTail alignment:UITextAlignmentLeft];
 }
 
 @end

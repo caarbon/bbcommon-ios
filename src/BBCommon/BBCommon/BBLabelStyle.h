@@ -24,7 +24,7 @@
 }
 
 #define BBLabelStyleDefinition(NAME, FONT_NAME, FONT_SIZE, FONT_COLOR)                                                                 \
-    BBLabelStyleDefinitionExt(NAME, FONT_NAME, FONT_SIZE, FONT_COLOR, UILineBreakModeTailTruncation, nil, CGSizeZero, nil)
+    BBLabelStyleDefinitionExt(NAME, FONT_NAME, FONT_SIZE, FONT_COLOR, NSLineBreakByTruncatingTail, nil, CGSizeZero, nil)
 
 @interface BBLabelStyle : NSObject {
 
